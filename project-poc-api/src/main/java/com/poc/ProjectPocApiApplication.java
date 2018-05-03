@@ -2,11 +2,21 @@ package com.poc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class ProjectPocApiApplication {
+public class ProjectPocApiApplication  extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
+		
 		SpringApplication.run(ProjectPocApiApplication.class, args);
 	}
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(ProjectPocApiApplication.class);
+
+	}
+	
 }

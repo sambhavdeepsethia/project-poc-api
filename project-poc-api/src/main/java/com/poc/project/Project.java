@@ -1,19 +1,29 @@
 package com.poc.project;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "projects")
 public class Project {
 	
 
 	@Id
+	@Column(name = "name")
 	private String name;
 	
+	@Column(name = "status")
+	@NotNull
 	private String status;
+	@Column(name = "priority")
 	private String priority;
+	@Column(name = "manager")
 	private String manager;
+	@Column(name = "comments")
 	private String comments;
 	
 	public Project() {}
@@ -28,7 +38,6 @@ public class Project {
 		this.comments = comments;
 	}
 	
-
 
 
 	public String getName() {

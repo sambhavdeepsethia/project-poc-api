@@ -25,7 +25,7 @@ public class ProjectController {
 		return projectService.getProject(name);
 	}
 	@RequestMapping(method=RequestMethod.POST, value="/projects")
-	public void addProject(@RequestBody Project project){
+	public void addProject(@RequestBody Project project) throws javax.persistence.EntityExistsException{
 		 projectService.addProject(project);
 	}
 	@RequestMapping(method=RequestMethod.PUT, value="/projects/{name}")
